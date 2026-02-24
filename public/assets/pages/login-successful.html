@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth Success | Gitbruv</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --card-bg: #161b22;
+            --border-color: #30363d;
+            --github-green: #238636;
+            --github-green-hover: #2ea043;
+            --text-main: #e6edf3;
+            --text-muted: #8b949e;
+            --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-mono);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* Subtle background glow */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(35, 134, 54, 0.15) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Terminal Window Header Decoration */
+        .card-header {
+            background-color: #010409;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot { width: 10px; height: 10px; border-radius: 50%; }
+        .dot-red { background: #ff5f56; }
+        .dot-amber { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+
+        .card-content {
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 20px;
+            margin: 20px 0 10px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .success-icon-wrapper {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            background: rgba(35, 134, 54, 0.1);
+            border-radius: 50%;
+            border: 2px solid var(--github-green);
+            margin-bottom: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        .success-icon {
+            font-size: 28px;
+            color: var(--github-green);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--github-green);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(240, 246, 252, 0.1);
+        }
+
+        .btn:hover {
+            background-color: var(--github-green-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(35, 134, 54, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(35, 134, 54, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(35, 134, 54, 0); }
+        }
+
+        .code-block {
+            background: #0d1117;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #7ee787;
+            margin-top: 20px;
+            border: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-header">
+            <div class="dot dot-red"></div>
+            <div class="dot dot-amber"></div>
+            <div class="dot dot-green"></div>
+        </div>
+        <div class="card-content">
+            <div class="success-icon-wrapper">
+                <div class="success-icon">✓</div>
+            </div>
+            <h1>Auth successful</h1>
+            <p>GitHub account connected successfully.<br>You may now return to your terminal.</p>
+            
+            <a class="btn" href="vscode://">Continue to Gitbruv</a>
+            <!-- <br>
+            <a class="btn" href="/">Back to Home</a> -->
+
+            <div class="code-block">
+                $ status: 200 OK — Handshake complete
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
