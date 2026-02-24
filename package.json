@@ -1,6 +1,6 @@
 {
   "name": "meta-ai-sdk",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A TypeScript SDK for interacting with the Meta AI, providing tools for AI agents, integrations, and utilities to enhance developer productivity.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -37,7 +37,6 @@
     "jsonwebtoken": "^9.0.2",
     "md5": "^2.3.0",
     "node-fetch": "^3.3.2",
-    "open": "^11.0.0",
     "socket.io": "^4.8.1",
     "typescript": "^5.9.2",
     "uuid": "^11.1.0"
